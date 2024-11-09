@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Sicurezza</title>
+</head>
+<body>
+    <h1>Segnalazione Sicurezza</h1>
+    <form id="safetyForm">
+        <!-- Tipologia -->
+        <label for="tipologia">Tipologia:</label>
+        <select id="tipologia" name="tipologia" required>
+            <option value="">Seleziona...</option>
+            <option value="Pronto soccorso">Pronto soccorso</option>
+            <option value="Incidente">Incidente</option>
+            <option value="Near miss">Near miss</option>
+            <option value="Situazione pericolosa">Situazione pericolosa</option>
+        </select><br><br>
+
+        <!-- Nome del preposto -->
+        <label for="preposto">Nome del preposto:</label>
+        <input type="text" id="preposto" name="preposto" required><br><br>
+
+        <!-- Data dell'evento -->
+        <label for="dataEvento">Data dell'evento:</label>
+        <input type="date" id="dataEvento" name="dataEvento" required><br><br>
+
+        <!-- Luogo dell'incidente -->
+        <label for="luogo">Luogo dell'incidente:</label>
+        <input type="text" id="luogo" name="luogo" required><br><br>
+
+        <!-- Data dell'incidente -->
+        <label for="dataIncidente">Data dell'incidente:</label>
+        <input type="date" id="dataIncidente" name="dataIncidente" required><br><br>
+
+        <!-- Ora dell'incidente -->
+        <label for="oraIncidente">Ora dell'incidente:</label>
+        <input type="time" id="oraIncidente" name="oraIncidente" required><br><br>
+
+        <!-- Descrizione dell'incidente -->
+        <label for="descrizione">Descrizione dell'incidente:</label><br>
+        <textarea id="descrizione" name="descrizione" rows="4" cols="50" required></textarea><br><br>
+
+        <!-- Firma del preposto -->
+        <label for="firma">Firma del preposto:</label>
+        <input type="text" id="firma" name="firma" required><br><br>
+
+        <!-- Data firma -->
+        <label for="dataFirma">Data firma:</label>
+        <input type="date" id="dataFirma" name="dataFirma" required><br><br>
+
+        <button type="submit">Invia Segnalazione</button>
+    </form>
+
+    <script>
+        document.getElementById("safetyForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            // Acquisizione dei valori dei campi
+            const tipologia = document.getElementById("tipologia").value;
+            const preposto = document.getElementById("preposto").value;
+            const dataEvento = document.getElementById("dataEvento").value;
+            const luogo = document.getElementById("luogo").value;
+            const dataIncidente = document.getElementById("dataIncidente").value;
+            const oraIncidente = document.getElementById("oraIncidente").value;
+            const descrizione = document.getElementById("descrizione").value;
+            const firma = document.getElementById("firma").value;
+            const dataFirma = document.getElementById("dataFirma").value;
+
+            // Mostra i dati nel console log (da sostituire con l'invio a un server)
+            console.log("Tipologia:", tipologia);
+            console.log("Preposto:", preposto);
+            console.log("Data Evento:", dataEvento);
+            console.log("Luogo:", luogo);
+            console.log("Data Incidente:", dataIncidente);
+            console.log("Ora Incidente:", oraIncidente);
+            console.log("Descrizione:", descrizione);
+            console.log("Firma:", firma);
+            console.log("Data Firma:", dataFirma);
+
+            // Reset del form dopo l'invio
+            alert("Segnalazione inviata con successo!");
+            document.getElementById("safetyForm").reset();
+        });
+    </script>
+</body>
+</html>
